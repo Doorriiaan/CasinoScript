@@ -39,14 +39,18 @@ end)
 
 menu.action(menu.my_root(), "Casino Loop", {"startcasinoloop"}, "Automatically wins and loses the slotmachines: This way you won't trigger the casino cooldown. Autoclicker is suggested for AFK money", function(click_type)
     loop = not loop
-    util.show_corner_help("Welcome to the casino loop! Be sure to max bet.")
+    util.show_corner_help("Welcome to the casino loop!")
+    PAD._SET_CONTROL_NORMAL(2, 208, 1) --Thanks to Heist Control
+    
     while(loop) do
         menu.trigger_commands("rigslotmachines jackpot")
+        SET_INT_LOCAL("CASINO_SLOTS", 1631, 8)
         for i=1,100 do 
             util.show_corner_help("Spin to win")
             util.yield(100)
         end
         menu.trigger_commands("rigslotmachines loss")
+        SET_INT_LOCAL("CASINO_SLOTS", 1631, 8)
         for i=1,100 do 
             util.show_corner_help("Spin to lose")
             util.yield(100)
