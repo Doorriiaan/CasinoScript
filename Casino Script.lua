@@ -4,9 +4,7 @@ local loop = false
 util.toast("FUCK SHARKCARDS!!! Casino Script by chinesus")
 
 menu.action(menu.my_root(), "To the casino!", {"tpcasino"}, "Duh", function(click_type)
-    menu.trigger_commands("posx 925")
-    menu.trigger_commands("posy 47")
-    menu.trigger_commands("posz 81")
+    ENTITY.SET_ENTITY_COORDS(players.user_ped(), 924.5333, 46.603252, 81.10639 , 1, 0, 0, 1)
 end)
 
 menu.action(menu.my_root(), "To the diamond slot!", {"tpslot"}, "Shine bright!", function(click_type)
@@ -16,30 +14,25 @@ menu.action(menu.my_root(), "To the diamond slot!", {"tpslot"}, "Shine bright!",
     math.random()
     local r = math.random(1,3)
     if(r == 1) then
-        menu.trigger_commands("posx 1114.")
-        menu.trigger_commands("posy 239")
-        menu.trigger_commands("posz -49")
+        ENTITY.SET_ENTITY_COORDS(players.user_ped(), 1113.7837, 239.45398, -49.84081 , 1, 0, 0, 1)
     elseif (r==2) then
-        menu.trigger_commands("posx 1116")
-        menu.trigger_commands("posy 228")
-        menu.trigger_commands("posz -49")
-    elseif (r==2) then
-        menu.trigger_commands("posx 1137")
-        menu.trigger_commands("posy 253")
-        menu.trigger_commands("posz -51")
+        ENTITY.SET_ENTITY_COORDS(players.user_ped(), 1116.7186, 228.10817, -49.84075 , 1, 0, 0, 1)
+    elseif (r==3) then
+        ENTITY.SET_ENTITY_COORDS(players.user_ped(), 1137.0839, 252.51076, -51.035732 , 1, 0, 0, 1)
     end
 end)
 
 menu.action(menu.my_root(), "To the cashier!", {"tpcashier"}, "Go get paid for your hard work!", function(click_type)
-    menu.trigger_commands("posx 1116")
-    menu.trigger_commands("posy 220")
-    menu.trigger_commands("posz -49")
+    ENTITY.SET_ENTITY_COORDS(players.user_ped(), 1116.0076, 219.90002, -49.435116 , 1, 0, 0, 1)
 end)
-
 
 menu.action(menu.my_root(), "Casino Loop", {"startcasinoloop"}, "Automatically wins and loses the slotmachines: This way you won't trigger the casino cooldown. Autoclicker is suggested for AFK money", function(click_type)
     loop = not loop
+<<<<<<< Updated upstream
     util.show_corner_help("Welcome to the casino loop! Be sure to max bet.")
+=======
+    util.show_corner_help("Welcome to the casino loop!")
+>>>>>>> Stashed changes
     while(loop) do
         menu.trigger_commands("rigslotmachines jackpot")
         for i=1,100 do 
@@ -56,9 +49,7 @@ menu.action(menu.my_root(), "Casino Loop", {"startcasinoloop"}, "Automatically w
 end)
 
 menu.action(menu.my_root(), "Roulette", {"roulette"}, "Takes you to the roulette table and rigs it to 1. Bet 50k on 1st 12 and 5k on 1", function(click_type)
-    menu.trigger_commands("posx 1133")
-    menu.trigger_commands("posy 263")
-    menu.trigger_commands("posz -51")
+    ENTITY.SET_ENTITY_COORDS(players.user_ped(), 1133.4238, 263.72913, -51.03577 , 1, 0, 0, 1)
     menu.trigger_commands("rigroulette 1")
 end)
 
