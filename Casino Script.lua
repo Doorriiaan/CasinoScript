@@ -28,11 +28,7 @@ end)
 
 menu.action(menu.my_root(), "Casino Loop", {"startcasinoloop"}, "Automatically wins and loses the slotmachines: This way you won't trigger the casino cooldown. Autoclicker is suggested for AFK money", function(click_type)
     loop = not loop
-<<<<<<< Updated upstream
     util.show_corner_help("Welcome to the casino loop! Be sure to max bet.")
-=======
-    util.show_corner_help("Welcome to the casino loop!")
->>>>>>> Stashed changes
     while(loop) do
         menu.trigger_commands("rigslotmachines jackpot")
         for i=1,100 do 
